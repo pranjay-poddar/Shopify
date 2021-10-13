@@ -17,6 +17,22 @@ $pink:#F3797E;
     padding-top: 12vh;
 }
 
+.mat-flat-button.mat-primary:disabled,
+.mat-raised-button.mat-primary:disabled,
+.mat-fab.mat-primary:disabled,
+.mat-mini-fab.mat-primary:disabled {
+    background-color: #c0c0c0;
+    color: black;
+}
+
+.mat-flat-button.mat-primary,
+.mat-raised-button.mat-primary,
+.mat-fab.mat-primary,
+.mat-mini-fab.mat-primary {
+    background-color: #308d46;
+    color: white;
+}
+
 .image {
     height: 30vw;
     width: 46vw;
