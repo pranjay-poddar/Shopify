@@ -15,47 +15,65 @@ import { SharingService } from 'src/app/services/sharing.service';
 })
 export class VendorLoginComponent implements OnInit {
 
-  id !: number;
+
+  
   VLoginForm !: FormGroup;
-  err !: String;
-  light !: string;
-  constructor(private fb: FormBuilder, private sharingService: SharingService) { }
+  err ! : String;
+  light ! : string;
+  constructor(private fb: FormBuilder, private sharingService:SharingService) { }
 
   ngOnInit(): void {
-
+    function ConfirmedValidator(controlName: string, matchingControlName: string){
+      return (formGroup: FormGroup) => {
+          const control = formGroup.controls[controlName];
+          const matchingControl = formGroup.controls[matchingControlName];
+          if (matchingControl.errors && !matchingControl.errors.confirmedValidator) {
+              return;
+          }
+          if (control.value !== matchingControl.value) {
+              matchingControl.setErrors({ confirmedValidator: true });
+          } else {
+              matchingControl.setErrors(null);
+          }
+      }
+  }
     this.VLoginForm = this.fb.group({
-
-      emailId: ['', [
+   
+      emailId: ['',[
         Validators.required,
         Validators.email,
         Validators.maxLength(40)
       ]],
-
-      pass: ['', [
+   
+   
+      pass:['',[
         Validators.required,
         Validators.pattern('^(?:(?:(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]))|(?:(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[a-z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))).{8,32}$'),
         Validators.minLength(8)
       ]],
-
-
-    });
-
+    
+     
+    },
+    );
+    
     this.light = this.sharingService.getData();
-    //console.log("light = "+this.light);
+    
   }
 
 
 
-  get email() {
-    return this.VLoginForm.get('email');
+
+
+  get email(){
+    return this.VLoginForm.get('emailId');
   }
 
-  get password() {
-    return this.VLoginForm.get('password');
+  get password(){
+    return this.VLoginForm.get('pass');
+  }
+  submit(){
+    
   }
 
 
-
-  submit() {
-  }
 }
