@@ -3,10 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './Utilities/navbar/navbar.component';
 import { VendorLoginComponent } from './Vendor/vendor-login/vendor-login.component';
 import { VendorSignupComponent } from './Vendor/vendor-signup/vendor-signup.component';
+import { HomeComponent } from './Home/home/home.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'vendorlogin', component: VendorLoginComponent },
   { path: 'vendorsignup', component: VendorSignupComponent },
+  { path: 'home', component: HomeComponent },
+
 ];
 
 @NgModule({
