@@ -158,7 +158,7 @@
         background: #323f4b;
     }
     .card:hover .box {
-        background: linear-gradient(45deg, #b95ce4, #4f29cd);
+        background: linear-gradient(#57CC99, #308d46);
     }
     .card .box .content h2 {
         color: #fff;
@@ -171,7 +171,7 @@
         color: #fff;
     }
     .card .box .content a {
-        background: #03a9f4;
+        background: #ff568f;
         color: #fff;
     }
     .card:hover .box .content a {
@@ -214,7 +214,7 @@
 .card:hover .box {
     transform: translateY(-40px);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(45deg, #57CC99, #308d46);
+    background: linear-gradient(#57CC99, #308d46);
 }
 
 .card .box .content {
@@ -248,7 +248,7 @@
     width: 45%;
     height: 45%;
     padding: 8px 20px;
-    background: #66DE93;
+    background: #ff568f;
     margin-top: 0px;
     border-radius: 20px;
     color: #fff;
@@ -258,7 +258,7 @@
 }
 
 .card:hover .box .content a {
-    background: #308d46;
+    background: #ff568f;
 }
 
 .jumbo-margin {
