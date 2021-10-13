@@ -23,6 +23,8 @@ import { MatIconTestingModule} from '@angular/material/icon/testing';
 import { MatIconModule } from "@angular/material/icon";
 import { AngularFileUploaderModule } from "angular-file-uploader";
 import { VendorLoginComponent } from './Vendor/vendor-login/vendor-login.component';
+import { VendorSignupComponent } from './Vendor/vendor-signup/vendor-signup.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,7 @@ import { VendorLoginComponent } from './Vendor/vendor-login/vendor-login.compone
     FooterComponent,
     AlertmsgComponent,
     VendorLoginComponent,
+    VendorSignupComponent
   ],
   imports: [
     BrowserModule,
