@@ -22,12 +22,14 @@ import { SharingService } from './services/sharing.service';
 import { MatIconTestingModule} from '@angular/material/icon/testing';
 import { MatIconModule } from "@angular/material/icon";
 import { AngularFileUploaderModule } from "angular-file-uploader";
+import { VendorLoginComponent } from './Vendor/vendor-login/vendor-login.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
     AlertmsgComponent,
+    VendorLoginComponent,
   ],
   imports: [
     BrowserModule,
