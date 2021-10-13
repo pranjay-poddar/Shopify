@@ -7,35 +7,20 @@ $pink:#F3797E;
     padding: 10px;
 }
 
-.mobile_view {
-    display: none;
-}
-
-.vendor-login {
+.buyer-login {
     background-color: #f8f8f8;
     position: relative;
     padding-top: 12vh;
 }
 
-.mat-flat-button.mat-primary:disabled,
-.mat-raised-button.mat-primary:disabled,
-.mat-fab.mat-primary:disabled,
-.mat-mini-fab.mat-primary:disabled {
-    background-color: #c0c0c0;
-    color: black;
-}
-
-.mat-flat-button.mat-primary,
-.mat-raised-button.mat-primary,
-.mat-fab.mat-primary,
-.mat-mini-fab.mat-primary {
-    background-color: #308d46;
-    color: white;
+.mobile_view {
+    display: none;
 }
 
 .image {
-    height: 30vw;
-    width: 46vw;
+    margin-top: 3%;
+    height: 26vw;
+    width: 36vw;
 }
 
 .card {
@@ -45,7 +30,7 @@ $pink:#F3797E;
     box-shadow: 0 4px 8px 0 rgba(136, 136, 136, 0.2), 0 6px 20px 0 rgba(138, 138, 138, 0.19);
 }
 
-#vlogin_heading {
+#blogin_heading {
     margin-top: 5%;
     font-size: 300%;
     font-weight: 550;
@@ -55,10 +40,10 @@ $pink:#F3797E;
 .dark {
     background-color: #161625;
     color: #fff;
-    .vendor-login {
-        background-color: #161625 !important;
+    .buyer-login {
+        background-color: #161625;
     }
-    #vlogin_heading {
+    #blogin_heading {
         color: #fff;
     }
     .card {
@@ -78,8 +63,8 @@ $pink:#F3797E;
 
 @media (max-width:996px) {
     .image {
-        margin-top: -12vh;
-        height: 32vw;
+        margin-top: 5vh;
+        height: 30vw;
         width: 40vw;
     }
     .card {
@@ -92,13 +77,11 @@ $pink:#F3797E;
     .mobile_view {
         display: block;
     }
-    .vlogin_heading {
+    .blogin_heading {
         display: none;
     }
-    .image {
-        margin-top: 3%;
-        height: 50vw;
-        width: 65vw;
+    .card {
+        margin: 10vh 0;
     }
 }
 
@@ -107,11 +90,16 @@ $pink:#F3797E;
         border-top: 1.9em !important;
         padding: 10px;
     }
-    #vlogin_heading {
+    #blogin_heading {
         margin-top: 5%;
         font-size: 260%;
         font-weight: 550;
         color: rgb(43, 43, 43);
+    }
+    .image {
+        margin-top: 3%;
+        height: 65vw;
+        width: 80vw;
     }
     .card {
         margin: 7vh 0;

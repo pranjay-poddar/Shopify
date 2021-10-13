@@ -1,19 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import Swal from 'sweetalert2';
 import { flyInOut , expand} from '../../Utilities/animations/animation';
 import { SharingService } from 'src/app/services/sharing.service';
 @Component({
-  selector: 'app-vendor-forget-pass',
-  templateUrl: './vendor-forget-pass.component.html',
-  styleUrls: ['./vendor-forget-pass.component.scss'],
+  selector: 'app-buyer-signup',
+  templateUrl: './buyer-signup.component.html',
+  styleUrls: ['./buyer-signup.component.scss'],
   animations: [
     flyInOut(),
     expand()
   ]
 })
-export class VendorForgetPassComponent implements OnInit {
-  HForgotForm !: FormGroup;
+export class BuyerSignupComponent implements OnInit {
+
+  BSForm !: FormGroup;
   light ! : string;
   constructor(private fb: FormBuilder, private sharingService:SharingService) { }
 
@@ -32,62 +34,70 @@ export class VendorForgetPassComponent implements OnInit {
           }
       }
   }
-    this.HForgotForm = this.fb.group({
-    
-      email: ['',[
+    this.BSForm = this.fb.group({
+      name: ['',[
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(46)
+      ]],
+      emailId: ['',[
         Validators.required,
         Validators.email,
         Validators.maxLength(40)
       ]],
-      
-      password:['',[
+      contact: ['',[
+        Validators.required,
+        // Validators.min(999999999),
+        // Validators.max(99999999999)
+      ]],
+      pass:['',[
         Validators.required,
         Validators.pattern('^(?:(?:(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]))|(?:(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[a-z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))).{8,32}$'),
         Validators.minLength(8)
       ]],
-      cpassword:['',[
+      conPass:['',[
         Validators.required,
         Validators.pattern('^(?:(?:(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]))|(?:(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[a-z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))).{8,32}$'),
-        Validators.minLength(8)
+        Validators.minLength(8),
       ]],
       agree:[false,[
         Validators.requiredTrue
-      ]]}, { 
-        validator: ConfirmedValidator('password', 'cpassword')
-      });
+      ]]
+    }, { 
+      validator: ConfirmedValidator('pass', 'conPass')
+    });
     
-      this.light = this.sharingService.getData();
+    this.light = this.sharingService.getData();
+
   }
 
 
 
-  get email(){
-    return this.HForgotForm.get('email');
+  get name(){
+    return this.BSForm.get('name');
   }
 
-  get password(){
-    return this.HForgotForm.get('password');
+  get emailId(){
+    return this.BSForm.get('emailId');
   }
-  get cpassword(){
-    return this.HForgotForm.get('cpassword');
+
+  get contact(){
+return this.BSForm.get('contact');
   }
+
+  get pass(){
+    return this.BSForm.get('pass');
+  }
+
+  get conPass(){
+    return this.BSForm.get('conPass');
+  }
+
   get agree(){
-    return this.HForgotForm.get('agree');
+    return this.BSForm.get('agree');
   }
-
 
   submit(){
-    console.log(this.HForgotForm.value);
-    Swal.fire({  
-      icon: 'success',  
-      title: 'Thank You...',  
-      text: 'Login Succesfull!',  
-});
-  this.HForgotForm.reset({
-    email: '',
-    password: '',
-  });
- 
-}
+  }
 
 }

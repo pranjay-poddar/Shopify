@@ -60,10 +60,6 @@ export class VendorLoginComponent implements OnInit {
     
   }
 
-
-
-
-
   get email(){
     return this.VLoginForm.get('emailId');
   }
