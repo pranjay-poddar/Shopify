@@ -1,0 +1,152 @@
+<app-navbar></app-navbar>
+
+<div class="vendor-signup {{light}}">
+    <div class="container">
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-7 col-lg 7 col-sm-12 d-flex justify-content-center">
+                <div class="row">
+                    <div class="col-md-12 col-12 text-center">
+                        <h1 id="vs_heading" [@expand]>Register Vendor</h1>
+                    </div>
+                    <div class="col-md-12 col-12 text-center">
+                        <img class="image grow2" src="../../../assets/images/vendor-signup.svg">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 col-lg-5 col-sm-11 col-xs-8">
+                <div class="card" [@flyInOut]>
+                    <form [formGroup]="VSForm">
+
+                        <mat-form-field>
+                            <input matInput type="text" placeholder="Shop Name" formControlName="ShopName">
+                            <mat-error *ngIf="name?.errors?.minlength">
+                                Name should be atleast 3 characters long
+                            </mat-error>
+                            <mat-error *ngIf="name?.errors?.maxlength">
+                                Name should be less than 46 characters
+                            </mat-error>
+                            <mat-error *ngIf="name?.touched">
+                                Please, enter valid shop name
+                            </mat-error>
+
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput placeholder="Email" type="email" formControlName="emailId">
+                            <mat-error *ngIf="email?.invalid && email?.touched">
+                                Please, enter valid email address
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput type="number" placeholder="Contact" formControlName="contact">
+                            <mat-error *ngIf="contact?.touched && contact?.invalid">
+                                Please enter Vendor contact number in correct format
+                            </mat-error>
+                            <mat-error *ngIf="contact?.errors?.min">
+                                Contact number should be equal to 10 Digits
+                            </mat-error>
+
+                            <mat-error *ngIf="contact?.errors?.max">
+                                Contact number should be equal to 10 Digits
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput type="text" placeholder="State" formControlName="state">
+                            <mat-error *ngIf="state?.errors?.minlength">
+                                State name should be atleast 3 characters long
+                            </mat-error>
+                            <mat-error *ngIf="state?.errors?.maxlength">
+                                State name should be less than 46 characters
+                            </mat-error>
+                            <mat-error *ngIf="state?.touched">
+                                Please, enter valid state
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput type="text" placeholder="City" formControlName="city">
+                            <mat-error *ngIf="city?.errors?.minlength">
+                                City name should be atleast 3 characters long
+                            </mat-error>
+                            <mat-error *ngIf="city?.errors?.maxlength">
+                                City name should be less than 46 characters
+                            </mat-error>
+                            <mat-error *ngIf="city?.touched">
+                                Please, enter valid city
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput type="text" placeholder="Area" formControlName="area">
+                            <mat-error *ngIf="area?.errors?.minlength">
+                                Area name should be atleast 3 characters long
+                            </mat-error>
+                            <mat-error *ngIf="area?.errors?.maxlength">
+                                Area name should be less than 46 characters
+                            </mat-error>
+                            <mat-error *ngIf="area?.touched">
+                                Please, enter valid area
+                            </mat-error>
+                        </mat-form-field>
+
+
+                        <mat-form-field>
+                            <input matInput type="number" placeholder="Pin Code" formControlName="pin">
+                            <mat-error *ngIf="pin?.touched && contact?.invalid">
+                                Please enter PinCode in correct format
+                            </mat-error>
+                            <mat-error *ngIf="pin?.errors?.min">
+                                PinCode should be equal to 6 Digits
+                            </mat-error>
+
+                            <mat-error *ngIf="pin?.errors?.max">
+                                PinCode should be equal to 6 Digits
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput type="password" placeholder="Password" formControlName="pass">
+                            <mat-hint align="end">Must have atleast one uppercase letter, one number and atleast 8 characters long</mat-hint>
+                            <mat-error *ngIf="password?.invalid && password?.touched">
+                                Please enter Password in correct format
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput type="password" placeholder="Confirm Password" formControlName="conPass">
+
+                            <mat-error *ngIf="cpassword?.invalid && cpassword?.touched">
+                                Please enter Password in correct format
+                            </mat-error>
+                            <mat-error *ngIf="cpassword?.errors?.confirmedValidator">
+                                Passwords does not match
+                            </mat-error>
+                        </mat-form-field>
+
+                        <br>
+                        <p>Upload Shop Certificate</p>
+                        <input type="file" class="file-upload" onchange="console.log(event.target.files)">
+                        <br> <br>
+                        <small class="form-text text-muted">We'll never share your details with anyone else.</small>
+                        <mat-checkbox class="checkbox" formControlName="agree">Are you sure, you want to submit?</mat-checkbox>
+                        <br>
+
+                        <br>
+                        <button mat-raised-button type="submit" style="margin-left: 2%;" (click)="submit()" [disabled]="VSForm.invalid" color="primary">Submit</button>
+
+                    </form>
+                </div>
+
+                <div class="col-md-12 col-12 ">
+                    <h3 class="text-center">Already Regestered? <a routerLink="/vendorlogin">Login</a></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+</div>
+
+<app-footer></app-footer>
