@@ -171,11 +171,12 @@
         color: #fff;
     }
     .card .box .content a {
-        background: #ff568f;
+        background: linear-gradient(to right, #57CC99, #308d46);
         color: #fff;
     }
     .card:hover .box .content a {
-        background: #ff568f;
+        background: linear-gradient(to right, #57CC99, #d6f8e7);
+        color: #131417;
     }
     .jumbo-margin {
         background-color: #131417;
@@ -248,7 +249,7 @@
     width: 45%;
     height: 45%;
     padding: 8px 20px;
-    background: #ff568f;
+    background: linear-gradient(to right, #57CC99, #308d46);
     margin-top: 0px;
     border-radius: 20px;
     color: #fff;
@@ -258,7 +259,8 @@
 }
 
 .card:hover .box .content a {
-    background: #ff568f;
+    background: linear-gradient(to right, #57CC99, #d6f8e7);
+    color: #131417;
 }
 
 .jumbo-margin {
