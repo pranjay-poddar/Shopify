@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HomeComponent } from './Home/home/home.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import 'hammerjs';
 import { AlertmsgComponent } from './Utilities/alertmsg/alertmsg.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,7 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SharingService } from './services/sharing.service';
-import { MatIconTestingModule} from '@angular/material/icon/testing';
+import { MatIconTestingModule } from '@angular/material/icon/testing';
 import { MatIconModule } from "@angular/material/icon";
 import { AngularFileUploaderModule } from "angular-file-uploader";
 @NgModule({
@@ -28,6 +29,7 @@ import { AngularFileUploaderModule } from "angular-file-uploader";
     NavbarComponent,
     FooterComponent,
     AlertmsgComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
