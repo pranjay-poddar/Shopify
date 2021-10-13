@@ -61,6 +61,11 @@ $pink:#F3797E;
     }
 }
 
+.mat-raised-button.mat-primary:enabled {
+    background-color: #308d46;
+    color: #fff;
+}
+
 @media (max-width:996px) {
     .image {
         margin-top: 5vh;
