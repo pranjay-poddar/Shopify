@@ -38,7 +38,7 @@ export class VendorSignupComponent implements OnInit {
       }
   }
     this.VSForm = this.fb.group({
-      ShopName: ['',[
+      shopName: ['',[
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(46)
@@ -96,8 +96,8 @@ export class VendorSignupComponent implements OnInit {
 
 
 
-  get name(){
-    return this.VSForm.get('ShopName');
+  get shopName(){
+    return this.VSForm.get('shopName');
   }
 
   get email(){

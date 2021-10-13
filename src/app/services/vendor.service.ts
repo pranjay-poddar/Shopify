@@ -18,6 +18,10 @@ export class VendorService {
   signInVendor(loginData : any) : Observable<Vendor>{
     return this.httpClient.post<Vendor>(this.baseUrl+"login-vendor", loginData);
   }
+  //get vendor by id
+  getById(id : number) : Observable<Vendor>{
+    return this.httpClient.get<Vendor>(this.baseUrl+"vendor/"+id);
+  }
   //add items
   addProducts(vendor : Vendor) : Observable<Vendor>{
     return this.httpClient.put<Vendor>(this.baseUrl+"add-product", vendor);

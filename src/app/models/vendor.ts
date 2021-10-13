@@ -9,5 +9,5 @@ export class Vendor {
     pin ! : number;
     pass ! : String;
     conPass ! : String;
-    products ! : [any];
+    products ! : [{}];
 }

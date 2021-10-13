@@ -19,14 +19,14 @@
                     <form [formGroup]="VSForm">
 
                         <mat-form-field>
-                            <input matInput type="text" placeholder="Shop Name" formControlName="ShopName">
-                            <mat-error *ngIf="name?.errors?.minlength">
+                            <input matInput type="text" placeholder="Shop Name" formControlName="shopName">
+                            <mat-error *ngIf="shopName?.errors?.minlength">
                                 Name should be atleast 3 characters long
                             </mat-error>
-                            <mat-error *ngIf="name?.errors?.maxlength">
+                            <mat-error *ngIf="shopName?.errors?.maxlength">
                                 Name should be less than 46 characters
                             </mat-error>
-                            <mat-error *ngIf="name?.touched">
+                            <mat-error *ngIf="shopName?.touched">
                                 Please, enter valid shop name
                             </mat-error>
 
