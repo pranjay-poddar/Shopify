@@ -53,7 +53,8 @@ import { VendorSignupComponent } from './Vendor/vendor-signup/vendor-signup.comp
     MatIconTestingModule,
     MatProgressBarModule,
     MatIconModule,
-    AngularFileUploaderModule
+    AngularFileUploaderModule,
+    HttpClientModule
   ],
   providers: [SharingService],
   bootstrap: [AppComponent]
