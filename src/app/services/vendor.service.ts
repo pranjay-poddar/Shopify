@@ -8,11 +8,11 @@ import { Vendor } from '../models/vendor';
 })
 export class VendorService {
 
-  private baseUrl = "http://localhost:8080/api/v1";
+  private baseUrl = "http://localhost:8080/api/v1/";
   constructor(private httpClient : HttpClient) { }
   //register vendor
-  registerVendor(vendor : Vendor) : Observable<Vendor>{
-    return this.httpClient.post<Vendor>(this.baseUrl+"register-vendor", vendor);
+  registerVendor(VsForm : any) : Observable<Vendor>{
+    return this.httpClient.post<Vendor>(this.baseUrl+"register-vendor", VsForm);
   }
   //sign in vendor
   signInVendor(loginData : any) : Observable<Vendor>{
