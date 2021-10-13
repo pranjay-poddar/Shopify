@@ -25,7 +25,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { AngularFileUploaderModule } from "angular-file-uploader";
 import { VendorLoginComponent } from './Vendor/vendor-login/vendor-login.component'
 import { VendorSignupComponent } from './Vendor/vendor-signup/vendor-signup.component';
-
+import {VendorForgetPassComponent} from './Vendor/vendor-forget-pass/vendor-forget-pass.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +34,9 @@ import { VendorSignupComponent } from './Vendor/vendor-signup/vendor-signup.comp
     AlertmsgComponent,
     VendorLoginComponent,
     VendorSignupComponent,
+    VendorForgetPassComponent,
     HomeComponent,
+  
   ],
   imports: [
     BrowserModule,
