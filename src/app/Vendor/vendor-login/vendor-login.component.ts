@@ -19,7 +19,7 @@ export class VendorLoginComponent implements OnInit {
   VLoginForm !: FormGroup;
   err !: String;
   light !: string;
-  constructor(private fb: FormBuilder,private router: Router, private sharingService: SharingService) { }
+  constructor(private fb: FormBuilder, private sharingService: SharingService) { }
 
   ngOnInit(): void {
 
