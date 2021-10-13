@@ -56,7 +56,7 @@
                         <mat-form-field>
                             <input matInput type="text" placeholder="State" formControlName="state">
                             <mat-error *ngIf="state?.errors?.minlength">
-                                State should be atleast 3 characters long
+                                State name should be atleast 3 characters long
                             </mat-error>
                             <mat-error *ngIf="state?.errors?.maxlength">
                                 State name should be less than 46 characters
@@ -69,7 +69,7 @@
                         <mat-form-field>
                             <input matInput type="text" placeholder="City" formControlName="city">
                             <mat-error *ngIf="city?.errors?.minlength">
-                                City should be atleast 3 characters long
+                                City name should be atleast 3 characters long
                             </mat-error>
                             <mat-error *ngIf="city?.errors?.maxlength">
                                 City name should be less than 46 characters
@@ -82,13 +82,28 @@
                         <mat-form-field>
                             <input matInput type="text" placeholder="Area" formControlName="area">
                             <mat-error *ngIf="area?.errors?.minlength">
-                                City should be atleast 3 characters long
+                                Area name should be atleast 3 characters long
                             </mat-error>
                             <mat-error *ngIf="area?.errors?.maxlength">
-                                City name should be less than 46 characters
+                                Area name should be less than 46 characters
                             </mat-error>
                             <mat-error *ngIf="area?.touched">
-                                Please, enter valid city
+                                Please, enter valid area
+                            </mat-error>
+                        </mat-form-field>
+
+
+                        <mat-form-field>
+                            <input matInput type="number" placeholder="Pin Code" formControlName="pin">
+                            <mat-error *ngIf="pin?.touched && contact?.invalid">
+                                Please enter PinCode in correct format
+                            </mat-error>
+                            <mat-error *ngIf="pin?.errors?.min">
+                                PinCode should be equal to 6 Digits
+                            </mat-error>
+
+                            <mat-error *ngIf="pin?.errors?.max">
+                                PinCode should be equal to 6 Digits
                             </mat-error>
                         </mat-form-field>
 
@@ -110,10 +125,15 @@
                                 Passwords does not match
                             </mat-error>
                         </mat-form-field>
-                        <small class="form-text text-muted">We'll never share your details with anyone else.</small>
-                        <mat-checkbox formControlName="agree" color="primary">Are you sure, you want to submit?</mat-checkbox>
+
                         <br>
-                        <input type="file" class="file-upload" onchange="console.log(event.target.files)">Upload Certificate
+                        <p>Upload Shop Certificate</p>
+                        <input type="file" class="file-upload" onchange="console.log(event.target.files)">
+                        <br> <br>
+                        <small class="form-text text-muted">We'll never share your details with anyone else.</small>
+                        <mat-checkbox class="checkbox" formControlName="agree">Are you sure, you want to submit?</mat-checkbox>
+                        <br>
+
                         <br>
                         <button mat-raised-button type="submit" style="margin-left: 2%;" (click)="submit()" [disabled]="VSForm.invalid" color="primary">Submit</button>
 
@@ -121,7 +141,7 @@
                 </div>
 
                 <div class="col-md-12 col-12 ">
-                    <h3 class="text-center">Already Regestered? <a routerLink="/Vendor-login">Login</a></h3>
+                    <h3 class="text-center">Already Regestered? <a routerLink="/vendorlogin">Login</a></h3>
                 </div>
             </div>
         </div>

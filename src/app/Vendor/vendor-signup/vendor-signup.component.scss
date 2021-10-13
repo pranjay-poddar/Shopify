@@ -26,6 +26,50 @@ $pink:#F3797E;
     box-shadow: 0 4px 8px 0 rgba(136, 136, 136, 0.2), 0 6px 20px 0 rgba(138, 138, 138, 0.19);
 }
 
+.file-upload {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    padding: 9px;
+    color: white;
+    background: #308d46;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.mat-flat-button.mat-primary:disabled,
+.mat-raised-button.mat-primary:disabled,
+.mat-fab.mat-primary:disabled,
+.mat-mini-fab.mat-primary:disabled {
+    background-color: #c0c0c0;
+    color: black;
+}
+
+.mat-flat-button.mat-primary,
+.mat-raised-button.mat-primary,
+.mat-fab.mat-primary,
+.mat-mini-fab.mat-primary {
+    background-color: #308d46;
+    color: white;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent {
+    .mat-checkbox-ripple .mat-ripple-element {
+        background-color: #308d46 !important;
+    }
+    .mat-checkbox-background,
+    .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+        background-color: #308d46;
+    }
+}
+
+::ng-deep .mat-checkbox.mat-accent {
+    .mat-checkbox-ripple .mat-ripple-element {
+        background-color: #308d46 !important;
+    }
+}
+
 #vs_heading {
     margin-top: 5%;
     font-size: 300%;

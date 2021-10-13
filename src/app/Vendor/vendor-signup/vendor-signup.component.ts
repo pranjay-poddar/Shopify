@@ -67,6 +67,11 @@ export class VendorSignupComponent implements OnInit {
         Validators.minLength(3),
         Validators.maxLength(46)
       ]],
+      pin: ['',[
+        Validators.required,
+        Validators.min(99999),
+        Validators.max(9999999)
+      ]],
       pass:['',[
         Validators.required,
         Validators.pattern('^(?:(?:(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]))|(?:(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[a-z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))).{8,32}$'),
@@ -111,15 +116,15 @@ return this.VSForm.get('contact');
   get area(){
     return this.VSForm.get('area');
   }
-
+  get pin(){
+    return this.VSForm.get('pin');
+      }
   get password(){
     return this.VSForm.get('pass');
   }
-
   get cpassword(){
     return this.VSForm.get('conPass');
   }
-
   get agree(){
     return this.VSForm.get('agree');
   }
