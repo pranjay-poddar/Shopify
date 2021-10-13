@@ -23,7 +23,8 @@ export class VendorLoginComponent implements OnInit {
   err ! : String;
   light ! : string;
   vendor : Vendor = new Vendor();
-  constructor(private fb: FormBuilder, private sharingService:SharingService, private vendorService : VendorService) { }
+  id ! : number;
+  constructor(private fb: FormBuilder, private sharingService:SharingService, private vendorService : VendorService, private router : Router) { }
 
   ngOnInit(): void {
     function ConfirmedValidator(controlName: string, matchingControlName: string){
@@ -77,11 +78,15 @@ export class VendorLoginComponent implements OnInit {
   submit(){
     this.vendorService.signInVendor(this.VLoginForm.value).subscribe((data) => {
       this.vendor = data;
+      this.id = this.vendor.id;
       Swal.fire({  
         icon: 'success',  
         title: 'Login Successfull',  
         text: '',  
       });
+      setTimeout(() => {
+        this.router.navigate(['vendor-dashboard', this.id]);
+      }, 1000);
     },
     (Error) => {alert(Error.error.message);}
     );
