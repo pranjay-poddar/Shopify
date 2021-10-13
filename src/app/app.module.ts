@@ -27,6 +27,9 @@ import { VendorLoginComponent } from './Vendor/vendor-login/vendor-login.compone
 import { VendorSignupComponent } from './Vendor/vendor-signup/vendor-signup.component';
 import {VendorForgetPassComponent} from './Vendor/vendor-forget-pass/vendor-forget-pass.component';
 import { VendorDashboardComponent } from './Vendor/vendor-dashboard/vendor-dashboard.component'
+import { BuyerLoginComponent } from './Buyer/buyer-login/buyer-login.component';
+import { BuyerSignupComponent } from './Buyer/buyer-signup/buyer-signup.component';
+import { BuyerForgotPassComponent } from './Buyer/buyer-forgot-pass/buyer-forgot-pass.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +41,9 @@ import { VendorDashboardComponent } from './Vendor/vendor-dashboard/vendor-dashb
     VendorForgetPassComponent,
     HomeComponent,
     VendorDashboardComponent,
+    BuyerLoginComponent,
+    BuyerSignupComponent,
+    BuyerForgotPassComponent,
   
   ],
   imports: [

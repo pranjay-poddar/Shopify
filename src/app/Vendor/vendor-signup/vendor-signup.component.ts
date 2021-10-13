@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { flyInOut , expand} from '../../Utilities/animations/animation';
 import { SharingService } from 'src/app/services/sharing.service';
 import { VendorService } from 'src/app/services/vendor.service';
+
 @Component({
   selector: 'app-vendor-signup',
   templateUrl: './vendor-signup.component.html',

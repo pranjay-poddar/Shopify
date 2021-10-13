@@ -1,15 +1,15 @@
 <app-navbar></app-navbar>
 
-<div class="vendor-forgot {{light}}">
+<div class="buyer-forgot {{light}}">
     <div class="container">
         <div class="row d-flex justify-content-center">
 
             <div class="col-md-6 col-lg-5 col-sm-11 col-xs-8">
                 <div class="col-md-12 col-12 text-center">
-                    <h1 id="flogin_heading" class="mobile_view">Forgot Password</h1>
+                    <h1 id="blogin_heading" class="mobile_view">Forgot Password</h1>
                 </div>
                 <div class="card" [@flyInOut]>
-                    <form [formGroup]="HForgotForm">
+                    <form [formGroup]="PForgotForm">
                         <mat-form-field>
                             <input matInput placeholder="Email" type="email" formControlName="email">
                             <mat-error *ngIf="email?.invalid && email?.touched">
@@ -38,7 +38,7 @@
                         <mat-checkbox formControlName="agree">Are you sure, you want to reset?</mat-checkbox>
                         <br>
                         <br>
-                        <button mat-raised-button type="submit" style="margin-left: 2%;" (click)="submit()" [disabled]="HForgotForm.invalid" color="primary">Reset</button>
+                        <button mat-raised-button type="submit" style="margin-left: 2%;" (click)="submit()" [disabled]="PForgotForm.invalid" color="primary">Reset</button>
                     </form>
                 </div>
 
@@ -46,7 +46,7 @@
             <div class="col-md-6 col-lg 7 col-sm-12 d-flex justify-content-center" [@expand]>
                 <div class="row">
                     <div class="col-md-12 col-12 text-center">
-                        <h1 id="flogin_heading" class="flogin_heading">Forgot Password</h1>
+                        <h1 id="blogin_heading" class="blogin_heading">Forgot Password</h1>
                     </div>
                     <div class="col-md-12 col-12 text-center">
                         <img class="image grow2" src="../../../assets/images/forgetpass.svg">

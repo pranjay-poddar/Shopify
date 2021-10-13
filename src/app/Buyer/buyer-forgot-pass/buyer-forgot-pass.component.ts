@@ -4,16 +4,17 @@ import Swal from 'sweetalert2';
 import { flyInOut , expand} from '../../Utilities/animations/animation';
 import { SharingService } from 'src/app/services/sharing.service';
 @Component({
-  selector: 'app-vendor-forget-pass',
-  templateUrl: './vendor-forget-pass.component.html',
-  styleUrls: ['./vendor-forget-pass.component.scss'],
+  selector: 'app-buyer-forgot-pass',
+  templateUrl: './buyer-forgot-pass.component.html',
+  styleUrls: ['./buyer-forgot-pass.component.scss'],
   animations: [
     flyInOut(),
     expand()
   ]
 })
-export class VendorForgetPassComponent implements OnInit {
-  HForgotForm !: FormGroup;
+export class BuyerForgotPassComponent implements OnInit {
+
+  PForgotForm !: FormGroup;
   light ! : string;
   constructor(private fb: FormBuilder, private sharingService:SharingService) { }
 
@@ -32,7 +33,7 @@ export class VendorForgetPassComponent implements OnInit {
           }
       }
   }
-    this.HForgotForm = this.fb.group({
+    this.PForgotForm = this.fb.group({
     
       email: ['',[
         Validators.required,
@@ -56,38 +57,39 @@ export class VendorForgetPassComponent implements OnInit {
         validator: ConfirmedValidator('password', 'cpassword')
       });
     
-      this.light = this.sharingService.getData();
+      this.light = this.sharingService.getData(); 
   }
 
 
 
   get email(){
-    return this.HForgotForm.get('email');
+    return this.PForgotForm.get('email');
   }
 
   get password(){
-    return this.HForgotForm.get('password');
+    return this.PForgotForm.get('password');
   }
   get cpassword(){
-    return this.HForgotForm.get('cpassword');
+    return this.PForgotForm.get('cpassword');
   }
   get agree(){
-    return this.HForgotForm.get('agree');
+    return this.PForgotForm.get('agree');
   }
 
 
   submit(){
-    console.log(this.HForgotForm.value);
+    console.log(this.PForgotForm.value);
     Swal.fire({  
       icon: 'success',  
       title: 'Thank You...',  
       text: 'Login Succesfull!',  
 });
-  this.HForgotForm.reset({
+  this.PForgotForm.reset({
     email: '',
     password: '',
   });
  
 }
+
 
 }
