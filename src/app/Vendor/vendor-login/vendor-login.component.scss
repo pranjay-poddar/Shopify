@@ -74,20 +74,6 @@ $pink:#F3797E;
         background-color: #131417;
         color: #fff;
     }
-     ::ng-deep .mat-checkbox-checked.mat-accent {
-        .mat-checkbox-ripple .mat-ripple-element {
-            background-color: #308d46 !important;
-        }
-        .mat-checkbox-background,
-        .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
-            background-color: #308d46;
-        }
-    }
-     ::ng-deep .mat-checkbox.mat-accent {
-        .mat-checkbox-ripple .mat-ripple-element {
-            background-color: #308d46 !important;
-        }
-    }
 }
 
 @media (max-width:996px) {

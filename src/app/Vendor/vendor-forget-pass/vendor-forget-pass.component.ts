@@ -6,7 +6,11 @@ import { SharingService } from 'src/app/services/sharing.service';
 @Component({
   selector: 'app-vendor-forget-pass',
   templateUrl: './vendor-forget-pass.component.html',
-  styleUrls: ['./vendor-forget-pass.component.scss']
+  styleUrls: ['./vendor-forget-pass.component.scss'],
+  animations: [
+    flyInOut(),
+    expand()
+  ]
 })
 export class VendorForgetPassComponent implements OnInit {
   HForgotForm !: FormGroup;
