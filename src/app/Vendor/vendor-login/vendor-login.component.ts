@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { flyInOut, expand } from '../../Utilities/animations/animation';
 import { SharingService } from 'src/app/services/sharing.service';
+import { VendorService } from 'src/app/services/vendor.service';
+import { Vendor } from 'src/app/models/vendor';
 @Component({
   selector: 'app-vendor-login',
   templateUrl: './vendor-login.component.html',
@@ -20,7 +22,9 @@ export class VendorLoginComponent implements OnInit {
   VLoginForm !: FormGroup;
   err ! : String;
   light ! : string;
-  constructor(private fb: FormBuilder, private sharingService:SharingService) { }
+  vendor : Vendor = new Vendor();
+  id ! : number;
+  constructor(private fb: FormBuilder, private sharingService:SharingService, private vendorService : VendorService, private router : Router) { }
 
   ngOnInit(): void {
     function ConfirmedValidator(controlName: string, matchingControlName: string){
@@ -64,11 +68,25 @@ export class VendorLoginComponent implements OnInit {
     return this.VLoginForm.get('emailId');
   }
 
-  get password(){
+  get pass(){
     return this.VLoginForm.get('pass');
   }
   submit(){
-    
+    this.vendorService.signInVendor(this.VLoginForm.value).subscribe((data) => {
+      this.vendor = data;
+      this.id = this.vendor.id;
+      Swal.fire({  
+        icon: 'success',  
+        title: 'Login Successfull',  
+        text: '',  
+      });
+      setTimeout(() => {
+        this.router.navigate(['vendor-dashboard', this.id]);
+      }, 1000);
+    },
+    (Error) => {alert(Error.error.message);}
+    );
+    this.VLoginForm.reset();
   }
 
 

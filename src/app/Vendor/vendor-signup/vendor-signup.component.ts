@@ -3,6 +3,8 @@ import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { flyInOut , expand} from '../../Utilities/animations/animation';
 import { SharingService } from 'src/app/services/sharing.service';
+import { VendorService } from 'src/app/services/vendor.service';
+
 @Component({
   selector: 'app-vendor-signup',
   templateUrl: './vendor-signup.component.html',
@@ -19,7 +21,7 @@ export class VendorSignupComponent implements OnInit {
   VSForm !: FormGroup;
   err ! : String;
   light ! : string;
-  constructor(private fb: FormBuilder, private sharingService:SharingService) { }
+  constructor(private fb: FormBuilder, private sharingService:SharingService, private vendorService : VendorService) { }
 
   ngOnInit(): void {
     function ConfirmedValidator(controlName: string, matchingControlName: string){
@@ -37,7 +39,7 @@ export class VendorSignupComponent implements OnInit {
       }
   }
     this.VSForm = this.fb.group({
-      ShopName: ['',[
+      shopName: ['',[
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(46)
@@ -47,7 +49,7 @@ export class VendorSignupComponent implements OnInit {
         Validators.email,
         Validators.maxLength(40)
       ]],
-      contact: ['',[
+      num: ['',[
         Validators.required,
         // Validators.min(999999999),
         // Validators.max(99999999999)
@@ -95,16 +97,16 @@ export class VendorSignupComponent implements OnInit {
 
 
 
-  get name(){
-    return this.VSForm.get('ShopName');
+  get shopName(){
+    return this.VSForm.get('shopName');
   }
 
   get email(){
     return this.VSForm.get('emailId');
   }
 
-  get contact(){
-return this.VSForm.get('contact');
+  get num(){
+return this.VSForm.get('num');
   }
 
   get state(){
@@ -130,8 +132,20 @@ return this.VSForm.get('contact');
   }
 
   submit(){
-    
+    this.vendorService.registerVendor(this.VSForm.value).subscribe((data) => {
+      Swal.fire({  
+        icon: 'success',  
+        title: 'Thank You...',  
+        text: 'Information Submitted Succesfully!',  
+        footer: '<a href="hospital-login">Login</a>'  
+      });
+    },
+    (Error) => {alert(Error.error.message)})
+    this.VSForm.reset();
   }
+ 
 
 
 }
+
+
