@@ -1,0 +1,192 @@
+<div class="container wrapper">
+    <div class="top_navbar">
+        <div class="hamburger" (click)="toggleNav()">
+            <div class="one grow"></div>
+            <div class="two grow"></div>
+            <div class="three grow"></div>
+        </div>
+        <div class="top_menu">
+            <div class="logo" (click)="toggleNav()" [@expand]>
+                <!-- <img src="../../../assets/images/nav-logo.png" height="50px" width="100px"> -->
+                Shopify
+            </div>
+            <ul>
+                <div class="row">
+                    <div class="col-12">
+                        <span class="dateTime justify-content-end">{{date| date : 'dd-MM-yyyy'}}</span>
+                    </div>
+                    <div class="col-12">
+                        <span class="dateTime justify-content-end">{{ time | date: 'hh:mm:ss a' }}</span>
+                    </div>
+                </div>
+                <li>
+                    <a routerLink="/home">
+                        <i class="fa fa-home grow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/home">
+                        <i (click)="logoutalert()" class="fas fa-sign-out-alt grow"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebar {{ sidenav }}" [@flyInOut]>
+            <ul>
+                <li class="text-center">
+                    <span class=" {{ sidenavTitle }} t grow text-center badge badge-light cat">Select Category</span>
+                </li>
+                <li>
+                    <a>
+                        <span class="icon"><i class="fas fa-shopping-cart grow"></i></span>
+                        <span class="{{ sidenavTitle }} t grow">Cart</span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <span class="icon"><i class="fas fa-star grow"></i></span>
+                        <span class="{{ sidenavTitle }} t grow">Wishlist</span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <span class="icon"><i class="fas fa-shopping-bag"></i> </span>
+                        <span class="{{ sidenavTitle }} t grow">Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <span class="icon"><i class="fas fa-address-book"></i>
+                    </span>
+                        <span class="{{ sidenavTitle }} t grow">Contact Vendor</span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <span class="icon"><i class="fas fa-question-circle"></i></span>
+                        <span class="{{ sidenavTitle }} t grow">Help Support</span>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/home">
+                        <span class="icon"><i class="fas fa-comment grow"></i></span>
+                        <span class="{{ sidenavTitle }} t grow">Reviews</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="{{ main_container }}">
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 ">
+                    <div class="row">
+                        <div class="col-6 ">
+                            <h1 class="head1">Welcome {{ vendor.shopName }}</h1>
+                        </div>
+                        <div class="col-6 ">
+                            <span class="dateTime-mobile ">{{date| date : 'dd-MM-yyyy'}}</span>
+                            <br>
+                            <span class="dateTime-mobile ">{{ time | date: 'hh:mm:ss a' }}</span>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 text-center">
+                    <h1 class="head2 mobile-hide">Total Numbers At A Glance</h1>
+                </div>
+
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 d-flex justify-content-center">
+                        <div class="card first-card align-items-center">
+                            <img class="card-img-top img-fluid" src="../../../assets/images/buyer-dashboard.svg" alt="Card image cap" />
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12 text-center mobile-view">
+                        <h1 class="head2">Total Numbers At A Glance</h1>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                        <div class="row">
+                            <div class="col-6 d-flex justify-content-center">
+                                <div class="card stats c-1 grow">
+                                    <h1 class="card-head text-center" [@expand]>Products</h1>
+                                    <h1 class="card-head2 text-center" [@expand]>168</h1>
+                                </div>
+                            </div>
+                            <div class="col-6 d-flex justify-content-center">
+                                <div class="card stats c-2 grow">
+                                    <h1 class="card-head text-center" [@expand]>Areas</h1>
+                                    <h1 class="card-head2 text-center" [@expand]>155</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 d-flex justify-content-center">
+                                <div class="card stats c-3 grow">
+                                    <h1 class="card-head text-center" [@expand]>
+                                        Vendors
+                                    </h1>
+                                    <h1 class="card-head2 text-center" [@expand]>191</h1>
+                                </div>
+                            </div>
+                            <div class="col-6 d-flex justify-content-center">
+                                <div class="card stats c-4 grow">
+                                    <h1 class="card-head text-center" [@expand]>Buyers</h1>
+                                    <h1 class="card-head2 text-center" [@expand]>110</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--table-->
+
+            <div class="container guideline">
+                <p class="text-muted"> 1) Search for vendors in your city using PIN code.</p>
+                <p class="text-muted"> 2) Search for the products in available vendors list</p>
+                <p class="text-muted"> 3) Select required filters for products.</p>
+                <!-- <p class="text-muted"> 3) Select details in the table below to know more.</p> -->
+            </div>
+
+
+            <div class="check-vendor text-center ">
+                <label class="check-city ">Find local vendors in your City: </label>
+                <input type="number" [(ngModel)]="city " placeholder="Enter PIN code " name="city " (keyup.enter)="findvendors() ">
+                <button type="button " class="btn btn-primary infobtn grow " (click)="findvendors() ">Search</button>
+            </div>
+
+            <div class="check-vendor text-center {{hideproducts}}">
+                <label class="check-city ">Find Products: </label>
+                <input type="text" placeholder="Enter Product Name " name="products" (keyup.enter)="products()">
+                <button type="button " class="btn btn-primary infobtn grow " (click)="products() ">Search</button>
+            </div>
+
+            <div class="table-responsive-sm tablem ">
+                <table class="table table-container ">
+                    <thead>
+                        <tr>
+                            <td>Shops</td>
+                            <td>Location</td>
+                            <td>Details</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr *ngFor="let a of vendorDetails "> -->
+                        <tr>
+                            <td>Shreya Kiranas</td>
+                            <td>Krishna Nagar, 482002</td>
+                            <td><button type="button " class="btn btn-primary detailsbtn grow ">Details</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</div>

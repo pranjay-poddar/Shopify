@@ -130,6 +130,7 @@ npm run build --prod
 
 ## License
 
-MIT License
+Apache License 2.0
+<br>
 © Team #tagSRM-2021
 
