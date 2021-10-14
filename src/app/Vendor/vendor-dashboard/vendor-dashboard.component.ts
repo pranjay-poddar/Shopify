@@ -63,7 +63,7 @@ export class VendorDashboardComponent implements OnInit {
   ELEMENT_DATA !: [any];
   ngOnInit(): void {
     // Using Basic Interval for clock
-    /*this.intervalId = setInterval(() => {
+    this.intervalId = setInterval(() => {
       this.time = new Date();
       }, 1000);
 
@@ -73,27 +73,9 @@ export class VendorDashboardComponent implements OnInit {
       this.ELEMENT_DATA = this.vendor.products;
     },
     (Error) => {alert(Error.error.message);}
-    )*/
-    this.vendor = {
-      "id": 4,
-      "shopName": "sohail grocery",
-      "emailId": "sohail@gmail.com",
-      "num": 8977712323,
-      "state": "Delhi",
-      "city": "Delhi",
-      "area": "Punjabi bhag",
-      "pin": 226021,
-      "pass": "sohail@123",
-      "conPass": "sohail@123",
-      "products": [
-        {
-          "pdtName": "parle g biscuit",
-          "qty": 90,
-          "price": 10
-        }
-      ]
-    }
-    this.ELEMENT_DATA = this.vendor.products;
+    )
+
+ 
   }
   displayedColumns: string[] = ['pdtName'];
   dataSource = new MatTableDataSource(this.ELEMENT_DATA);

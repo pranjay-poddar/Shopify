@@ -72,7 +72,7 @@ export class VendorLoginComponent implements OnInit {
     return this.VLoginForm.get('pass');
   }
   submit() {
-    /*this.vendorService.signInVendor(this.VLoginForm.value).subscribe((data) => {
+    this.vendorService.signInVendor(this.VLoginForm.value).subscribe((data) => {
       this.vendor = data;
       this.id = this.vendor.id;
       Swal.fire({
@@ -81,31 +81,12 @@ export class VendorLoginComponent implements OnInit {
         text: '',
       });
       setTimeout(() => {
-        //this.router.navigate(['vendor-dashboard', this.id]);
+        this.router.navigate(['vendor-dashboard', this.id]);
       }, 1000);
     },
       (Error) => { alert(Error.error.message); }
-    );*/
-    this.vendor = {
-      "id": 4,
-      "shopName": "sohail grocery",
-      "emailId": "sohail@gmail.com",
-      "num": 8977712323,
-      "state": "Delhi",
-      "city": "Delhi",
-      "area": "Punjabi bhag",
-      "pin": 226021,
-      "pass": "sohail@123",
-      "conPass": "sohail@123",
-      "products": [
-        {
-          "pdtName": "parle g biscuit",
-          "qty": 90,
-          "price": 10
-        }
-      ]
-    }
-    this.router.navigate(['vendor-dashboard', this.id]);
+    );
+  
     this.VLoginForm.reset();
   }
 
