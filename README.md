@@ -131,5 +131,5 @@ npm run build --prod
 ## License
 
 MIT License
-© Team Shopify-2021
+© Team #tagSRM-2021
 
