@@ -61,9 +61,9 @@ $pink:#F3797E;
     }
 }
 
-.mat-raised-button.mat-primary:enabled {
-    background-color: #308d46;
+.mat-flat-button, .mat-raised-button, .mat-fab, .mat-mini-fab {
     color: #fff;
+    background-color: #308d46;
 }
 
 @media (max-width:996px) {
