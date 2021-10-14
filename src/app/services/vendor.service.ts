@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Products } from '../models/products';
 import { Vendor } from '../models/vendor';
 
 @Injectable({
@@ -33,5 +34,9 @@ export class VendorService {
   //get details of pdt by id
   getProductById(id : number) : Observable<any>{
     return this.httpClient.get<any>(this.baseUrl+"products/"+id);
+  }
+  //update producst by id
+  updateProductById(id : number, pdt : Products) : Observable<Products>{
+    return this.httpClient.put<any>(this.baseUrl+"products/"+id, pdt);
   }
 }
