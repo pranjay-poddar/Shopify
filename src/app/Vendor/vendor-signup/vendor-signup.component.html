@@ -19,14 +19,14 @@
                     <form [formGroup]="VSForm">
 
                         <mat-form-field>
-                            <input matInput type="text" placeholder="Shop Name" formControlName="ShopName">
-                            <mat-error *ngIf="name?.errors?.minlength">
+                            <input matInput type="text" placeholder="Shop Name" formControlName="shopName">
+                            <mat-error *ngIf="shopName?.errors?.minlength">
                                 Name should be atleast 3 characters long
                             </mat-error>
-                            <mat-error *ngIf="name?.errors?.maxlength">
+                            <mat-error *ngIf="shopName?.errors?.maxlength">
                                 Name should be less than 46 characters
                             </mat-error>
-                            <mat-error *ngIf="name?.touched">
+                            <mat-error *ngIf="shopName?.touched">
                                 Please, enter valid shop name
                             </mat-error>
 
@@ -40,15 +40,15 @@
                         </mat-form-field>
 
                         <mat-form-field>
-                            <input matInput type="number" placeholder="Contact" formControlName="contact">
-                            <mat-error *ngIf="contact?.touched && contact?.invalid">
+                            <input matInput type="number" placeholder="Contact" formControlName="num">
+                            <mat-error *ngIf="num?.touched && num?.invalid">
                                 Please enter Vendor contact number in correct format
                             </mat-error>
-                            <mat-error *ngIf="contact?.errors?.min">
+                            <mat-error *ngIf="num?.errors?.min">
                                 Contact number should be equal to 10 Digits
                             </mat-error>
 
-                            <mat-error *ngIf="contact?.errors?.max">
+                            <mat-error *ngIf="num?.errors?.max">
                                 Contact number should be equal to 10 Digits
                             </mat-error>
                         </mat-form-field>
@@ -95,7 +95,7 @@
 
                         <mat-form-field>
                             <input matInput type="number" placeholder="Pin Code" formControlName="pin">
-                            <mat-error *ngIf="pin?.touched && contact?.invalid">
+                            <mat-error *ngIf="pin?.touched && pin?.invalid">
                                 Please enter PinCode in correct format
                             </mat-error>
                             <mat-error *ngIf="pin?.errors?.min">
