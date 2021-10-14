@@ -14,13 +14,13 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'vendorlogin', component: VendorLoginComponent },
   { path: 'vendorsignup', component: VendorSignupComponent },
-  { path: 'vendorfpass',component: VendorForgetPassComponent},
+  { path: 'vendorfpass', component: VendorForgetPassComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'vendor-dashboard/:id', component : VendorDashboardComponent},
-  { path: 'buyerlogin',component: BuyerLoginComponent},
-  { path: 'buyersignup',component: BuyerSignupComponent},
-  { path: 'buyerfpass',component: BuyerForgotPassComponent},
-  { path: 'buyer-dashboard',component: BuyerDashboardComponent},
+  { path: 'vendor-dashboard/:id', component: VendorDashboardComponent },
+  { path: 'buyerlogin', component: BuyerLoginComponent },
+  { path: 'buyersignup', component: BuyerSignupComponent },
+  { path: 'buyerfpass', component: BuyerForgotPassComponent },
+  { path: 'buyer-dashboard', component: BuyerDashboardComponent },
 
 ];
 
