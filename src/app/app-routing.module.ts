@@ -1,5 +1,5 @@
 import { VendorForgetPassComponent } from './Vendor/vendor-forget-pass/vendor-forget-pass.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './Utilities/navbar/navbar.component';
 import { VendorLoginComponent } from './Vendor/vendor-login/vendor-login.component';
@@ -9,7 +9,7 @@ import { VendorDashboardComponent } from './Vendor/vendor-dashboard/vendor-dashb
 import { BuyerLoginComponent } from './Buyer/buyer-login/buyer-login.component';
 import { BuyerSignupComponent } from './Buyer/buyer-signup/buyer-signup.component';
 import { BuyerForgotPassComponent } from './Buyer/buyer-forgot-pass/buyer-forgot-pass.component'
-
+import { BuyerDashboardComponent } from './Buyer/buyer-dashboard/buyer-dashboard.component'
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'vendorlogin', component: VendorLoginComponent },
@@ -20,6 +20,7 @@ const routes: Routes = [
   { path: 'buyerlogin',component: BuyerLoginComponent},
   { path: 'buyersignup',component: BuyerSignupComponent},
   { path: 'buyerfpass',component: BuyerForgotPassComponent},
+  { path: 'buyer-dashboard',component: BuyerDashboardComponent},
 
 ];
 
