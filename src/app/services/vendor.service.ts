@@ -30,4 +30,8 @@ export class VendorService {
   getItems(id : number) : Observable<Vendor[]>{
     return this.httpClient.get<Vendor[]>(this.baseUrl+"get-products/"+id);
   }
+  //get details of pdt by id
+  getProductById(id : number) : Observable<any>{
+    return this.httpClient.get<any>(this.baseUrl+"products/"+id);
+  }
 }

@@ -3,7 +3,7 @@ import { HomeComponent } from './Home/home/home.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './Utilities/navbar/navbar.component';
 import { FooterComponent } from './Utilities/footer/footer.component';
 import { MatInputModule } from '@angular/material/input';
@@ -30,6 +30,8 @@ import { VendorDashboardComponent } from './Vendor/vendor-dashboard/vendor-dashb
 import { BuyerLoginComponent } from './Buyer/buyer-login/buyer-login.component';
 import { BuyerSignupComponent } from './Buyer/buyer-signup/buyer-signup.component';
 import { BuyerForgotPassComponent } from './Buyer/buyer-forgot-pass/buyer-forgot-pass.component'
+import { MatTableModule } from '@angular/material/table';
+import { UpdateCompComponent } from './Vendor/update-comp/update-comp.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +46,7 @@ import { BuyerForgotPassComponent } from './Buyer/buyer-forgot-pass/buyer-forgot
     BuyerLoginComponent,
     BuyerSignupComponent,
     BuyerForgotPassComponent,
+    UpdateCompComponent,
   
   ],
   imports: [
@@ -64,7 +67,11 @@ import { BuyerForgotPassComponent } from './Buyer/buyer-forgot-pass/buyer-forgot
     MatProgressBarModule,
     MatIconModule,
     AngularFileUploaderModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    MatTableModule,
+    MatDialogModule
   ],
   providers: [SharingService],
   bootstrap: [AppComponent]
