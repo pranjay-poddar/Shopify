@@ -1,7 +1,7 @@
 <h1 align="center"><b> SHOPIFY </b></h1> 
 <p> A compassionate effort to provide people with all the necessities they need at their finger tips, we are resolutely committed to provide our buyers with vendors and their services at their doorsteps.</p>
 <p align="center">
-<img src="#" width="700" title="Shopify Poster">
+<img src="https://github.com/pranjay-poddar/Shopify-Hack-With-Us/blob/master/src/assets/images/poster.gif" width="700" title="Shopify Poster">
 </p >
 
 [![Build Status](https://img.shields.io/circleci/project/all-contributors/all-contributors/master.svg)](https://circleci.com/gh/all-contributors/workflows/all-contributors/tree/master)
@@ -9,7 +9,7 @@
 [![Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e30784c5-9efd-4f20-8a47-13f3fb899613/deploy-status)](https://app.netlify.com/sites/allcontributors-org/deploys)
 [![Pull Reminders](https://pullreminders.com/badge.svg)](https://pullreminders.com?ref=badge)
-![GitHub repo size](https://img.shields.io/github/repo-size/pranjay-poddar/Shopify?color=green)
+
 
 ## About Us 
 
@@ -109,7 +109,7 @@ npm run build --prod
 ```
 
 ## How To Contribute
-1.  Fork it ([https://github.com/pranjay-poddar/Shopify-Hack-With-Us])(https://github.com/pranjay-poddar/Shopify-Hack-With-Us)
+1.  Fork it [https://github.com/pranjay-poddar/Shopify-Hack-With-Us](https://github.com/pranjay-poddar/Shopify-Hack-With-Us)
 2.  Create your feature branch (`git checkout -b feature/xyz`)
 3.  Commit your changes (`git commit -am 'Add some xyz'`)
 4.  Push to the branch (`git push origin feature/xyz`)
