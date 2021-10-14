@@ -539,8 +539,8 @@ tr:hover {
         margin-top: 25px;
     }
     .card-img-top {
-        height: 15rem;
-        width: 15rem;
+        height: 10rem;
+        width: 10rem;
     }
     .first-card {
         height: 10rem;
@@ -568,6 +568,12 @@ tr:hover {
         width: 80%;
         margin-top: 50px;
         margin-left: 50px;
+    }
+    .card-img-top {
+        height: 10rem;
+        width: 10rem;
+        border-radius: 15px;
+        display: inline;
     }
     .sidebar {
         position: fixed;
@@ -599,8 +605,8 @@ tr:hover {
         margin-top: 25px;
     }
     .card-img-top {
-        height: 15rem;
-        width: 15rem;
+        height: 10rem;
+        width: 10rem;
         border-radius: 15px;
         display: inline;
     }
