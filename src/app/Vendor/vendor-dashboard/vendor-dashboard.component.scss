@@ -6,7 +6,16 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
-
+/* Structure */
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
 .wrapper {
     margin: 0px;
 }

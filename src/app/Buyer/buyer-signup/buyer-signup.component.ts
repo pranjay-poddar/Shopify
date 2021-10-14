@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 import Swal from 'sweetalert2';
 import { flyInOut , expand} from '../../Utilities/animations/animation';
 import { SharingService } from 'src/app/services/sharing.service';
+import { BuyerService } from 'src/app/services/buyer.service';
 @Component({
   selector: 'app-buyer-signup',
   templateUrl: './buyer-signup.component.html',
@@ -17,7 +18,7 @@ export class BuyerSignupComponent implements OnInit {
 
   BSForm !: FormGroup;
   light ! : string;
-  constructor(private fb: FormBuilder, private sharingService:SharingService) { }
+  constructor(private fb: FormBuilder, private sharingService:SharingService, private buyerService : BuyerService) { }
 
   ngOnInit(): void {
     function ConfirmedValidator(controlName: string, matchingControlName: string){
@@ -45,7 +46,7 @@ export class BuyerSignupComponent implements OnInit {
         Validators.email,
         Validators.maxLength(40)
       ]],
-      contact: ['',[
+      num: ['',[
         Validators.required,
         // Validators.min(999999999),
         // Validators.max(99999999999)
@@ -81,8 +82,8 @@ export class BuyerSignupComponent implements OnInit {
     return this.BSForm.get('emailId');
   }
 
-  get contact(){
-return this.BSForm.get('contact');
+  get num(){
+return this.BSForm.get('num');
   }
 
   get pass(){
@@ -98,6 +99,16 @@ return this.BSForm.get('contact');
   }
 
   submit(){
+    this.buyerService.registerBuyer(this.BSForm.value).subscribe((data) => {
+      Swal.fire({  
+        icon: 'success',  
+        title: 'Thank You...',  
+        text: 'Information Submitted Succesfully!',  
+        footer: '<a href="hospital-login">Login</a>'  
+      });
+    },
+    (Error) => {alert(Error.error.message);}
+    )
   }
 
 }

@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'buyerlogin',component: BuyerLoginComponent},
   { path: 'buyersignup',component: BuyerSignupComponent},
   { path: 'buyerfpass',component: BuyerForgotPassComponent},
-  { path: 'buyer-dashboard',component: BuyerDashboardComponent},
+  { path: 'buyer-dashboard/:id',component: BuyerDashboardComponent},
 
 ];
 

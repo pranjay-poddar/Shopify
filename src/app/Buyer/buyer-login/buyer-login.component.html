@@ -12,7 +12,7 @@
                     <form [formGroup]="BLoginForm">
                         <mat-form-field>
                             <input matInput placeholder="Email" type="email" formControlName="emailId">
-                            <mat-error *ngIf="email?.invalid && email?.touched">
+                            <mat-error *ngIf="emailId?.invalid && emailId?.touched">
                                 Please, enter valid email address
                             </mat-error>
                         </mat-form-field>
@@ -20,7 +20,7 @@
                         <mat-form-field>
                             <input matInput type="password" placeholder="Password" formControlName="pass">
 
-                            <mat-error *ngIf="password?.invalid && password?.touched">
+                            <mat-error *ngIf="pass?.invalid && pass?.touched">
                                 Please enter Password in correct format
                             </mat-error>
                         </mat-form-field>

@@ -39,15 +39,15 @@
                         </mat-form-field>
 
                         <mat-form-field>
-                            <input matInput type="number" placeholder="Contact" formControlName="contact">
-                            <mat-error *ngIf="contact?.touched && contact?.invalid">
+                            <input matInput type="number" placeholder="Contact" formControlName="num">
+                            <mat-error *ngIf="num?.touched && num?.invalid">
                                 Please enter contact number in correct format
                             </mat-error>
-                            <mat-error *ngIf="contact?.errors?.min">
+                            <mat-error *ngIf="num?.errors?.min">
                                 Contact number should be equal to 10 Digits
                             </mat-error>
 
-                            <mat-error *ngIf="contact?.errors?.max">
+                            <mat-error *ngIf="num?.errors?.max">
                                 Contact number should be equal to 10 Digits
                             </mat-error>
                             <!-- <mat-error *ngIf="contact?.touched && contact?.invalid">
