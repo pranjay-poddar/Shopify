@@ -280,7 +280,7 @@
 }
 
 .about-img {
-    margin-bottom: 20px;
+    margin-bottom: -36px;
 }
 
 .pa-padding {
@@ -309,5 +309,8 @@
 @media only screen and (max-width: 576px) {
     .rows {
         padding-top: 12%;
+    }
+    .card .box .content a {
+        font-size: 10px;
     }
 }
