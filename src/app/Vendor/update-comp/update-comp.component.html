@@ -1,0 +1,31 @@
+<div class="start-box" *ngIf="pdtDetails != undefined">
+    <h1 mat-dialog-title class="text-center">{{ pdtDetails.pdtName }}</h1>
+  </div>
+  <div mat-dialog-content class="content-box">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-4 col-sm-12">
+                <span class="col-head">QUANTITY:</span>
+              </div>
+              <div class="col-md-8 col-sm-12">
+                <span class="col-box">
+                    <input type="text"  [(ngModel)]="pdtDetails.qty" name= "pdtDetails.qty">
+                </span>
+              </div>
+          </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4 col-sm-12">
+              <span class="col-head">PRICE:</span>
+            </div>
+            <div class="col-md-8 col-sm-12">
+              <span class="col-box">
+                  <input type="text"  [(ngModel)]="pdtDetails.price" name= "pdtDetails.price">
+              </span>
+            </div>
+        </div>
+      </div>
+  <div mat-dialog-actions>
+    <button type="button" class="btn btn-primary infobtn grow" (click)="Update()">Update</button>
+    <button type="button" class="btn btn-primary infobtn grow" (click)="dialogClose()">Close</button>
+  </div>

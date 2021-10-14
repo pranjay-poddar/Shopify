@@ -1,0 +1,14 @@
+<section class="add-product">
+    <div class="container">
+        Product Name :
+        <input type="text" [(ngModel)]="product.pdtName"name="shopName">
+        <br>
+        Quantity :
+        <input type="text" [(ngModel)]="product.qty" name="qty">
+        <br>
+        Price :
+        <input type="text" [(ngModel)]="product.price" name="price">
+        <br>
+        <button type="button" class="btn btn-primary infobtn grow" (click)="addProduct()">Add</button>
+    </div>
+</section>

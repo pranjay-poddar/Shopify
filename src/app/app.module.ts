@@ -3,7 +3,7 @@ import { HomeComponent } from './Home/home/home.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './Utilities/navbar/navbar.component';
 import { FooterComponent } from './Utilities/footer/footer.component';
 import { MatInputModule } from '@angular/material/input';
@@ -29,7 +29,10 @@ import {VendorForgetPassComponent} from './Vendor/vendor-forget-pass/vendor-forg
 import { VendorDashboardComponent } from './Vendor/vendor-dashboard/vendor-dashboard.component'
 import { BuyerLoginComponent } from './Buyer/buyer-login/buyer-login.component';
 import { BuyerSignupComponent } from './Buyer/buyer-signup/buyer-signup.component';
-import { BuyerForgotPassComponent } from './Buyer/buyer-forgot-pass/buyer-forgot-pass.component';
+import { BuyerForgotPassComponent } from './Buyer/buyer-forgot-pass/buyer-forgot-pass.component'
+import { MatTableModule } from '@angular/material/table';
+import { UpdateCompComponent } from './Vendor/update-comp/update-comp.component';
+import { AddProductComponent } from './Vendor/add-product/add-product.component';
 import { BuyerDashboardComponent } from './Buyer/buyer-dashboard/buyer-dashboard.component'
 @NgModule({
   declarations: [
@@ -45,6 +48,8 @@ import { BuyerDashboardComponent } from './Buyer/buyer-dashboard/buyer-dashboard
     BuyerLoginComponent,
     BuyerSignupComponent,
     BuyerForgotPassComponent,
+    UpdateCompComponent,
+    AddProductComponent,
     BuyerDashboardComponent,
   
   ],
@@ -66,7 +71,11 @@ import { BuyerDashboardComponent } from './Buyer/buyer-dashboard/buyer-dashboard
     MatProgressBarModule,
     MatIconModule,
     AngularFileUploaderModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    MatTableModule,
+    MatDialogModule
   ],
   providers: [SharingService],
   bootstrap: [AppComponent]
