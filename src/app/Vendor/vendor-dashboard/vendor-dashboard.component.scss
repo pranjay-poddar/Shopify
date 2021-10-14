@@ -6,16 +6,19 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
+
+
 /* Structure */
+
 table {
     width: 100%;
-  }
-  
-  .mat-form-field {
+}
+
+.mat-form-field {
     font-size: 14px;
     width: 100%;
-  }
-  
+}
+
 .wrapper {
     margin: 0px;
 }
@@ -113,7 +116,7 @@ table {
 }
 
 .wrapper .top_navbar .top_menu ul li a:hover {
-    background: #4360b5;
+    background: #15331c;
     color: #fff;
 }
 
@@ -162,7 +165,7 @@ table {
 
 .wrapper .sidebar ul li a:hover,
 .wrapper .sidebar ul li a.active {
-    background: #4360b5;
+    background: #15331c;
     color: #fff;
 }
 

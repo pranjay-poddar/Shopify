@@ -1,9 +1,9 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Vendor } from 'src/app/models/vendor';
 import { VendorService } from 'src/app/services/vendor.service';
 import Swal from 'sweetalert2';
-import {MatTableDataSource} from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table';
 import { expand, flyInOut } from 'src/app/Utilities/animations/animation';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateCompComponent } from '../update-comp/update-comp.component';
@@ -22,48 +22,48 @@ import { AddProductComponent } from '../add-product/add-product.component';
 })
 export class VendorDashboardComponent implements OnInit {
 
-  id ! : number;
-  vendor : Vendor = new Vendor();
-  date=Date();
+  id !: number;
+  vendor: Vendor = new Vendor();
+  date = Date();
   sidenav = "";
   sidenavTitle = "";
-  main_container = "main_container" ;
-  city! : String;
+  main_container = "main_container";
+  city!: String;
   time = new Date();
-  intervalId:any;
+  intervalId: any;
   subscription: any;
 
-  logoutalert(){  
-    Swal.fire('Thank you...', 'Logout succesfully!', 'success')  
-  } 
+  logoutalert() {
+    Swal.fire('Thank you...', 'Logout succesfully!', 'success')
+  }
 
-  toggleNav(){
-    if(this.sidenav){
+  toggleNav() {
+    if (this.sidenav) {
       this.sidenav = "";
     }
-    else{
+    else {
       this.sidenav = "sidenav2";
     }
-    if(this.sidenavTitle){
+    if (this.sidenavTitle) {
       this.sidenavTitle = "";
     }
-    else{
+    else {
       this.sidenavTitle = "sidenavTitle2";
     }
-    if(this.main_container=="main_container"){
+    if (this.main_container == "main_container") {
       this.main_container = "main_container2";
     }
-    else{
+    else {
       this.main_container = "main_container";
     }
   };
 
-  constructor(private route : ActivatedRoute, public dialog: MatDialog, private vendorService : VendorService) { }
+  constructor(private route: ActivatedRoute, public dialog: MatDialog, private vendorService: VendorService) { }
 
-  ELEMENT_DATA ! : [any];
+  ELEMENT_DATA !: [any];
   ngOnInit(): void {
     // Using Basic Interval for clock
-    this.intervalId = setInterval(() => {
+    /*this.intervalId = setInterval(() => {
       this.time = new Date();
       }, 1000);
 
@@ -73,16 +73,36 @@ export class VendorDashboardComponent implements OnInit {
       this.ELEMENT_DATA = this.vendor.products;
     },
     (Error) => {alert(Error.error.message);}
-    )
+    )*/
+    this.vendor = {
+      "id": 4,
+      "shopName": "sohail grocery",
+      "emailId": "sohail@gmail.com",
+      "num": 8977712323,
+      "state": "Delhi",
+      "city": "Delhi",
+      "area": "Punjabi bhag",
+      "pin": 226021,
+      "pass": "sohail@123",
+      "conPass": "sohail@123",
+      "products": [
+        {
+          "pdtName": "parle g biscuit",
+          "qty": 90,
+          "price": 10
+        }
+      ]
+    }
+    this.ELEMENT_DATA = this.vendor.products;
   }
   displayedColumns: string[] = ['pdtName'];
   dataSource = new MatTableDataSource(this.ELEMENT_DATA);
-  
+
 
   // applyFilter(event: Event) {
   //   const filterValue = (event.target as HTMLInputElement).value;
   //   this.dataSource.filter = filterValue.trim().toLowerCase();
-    
+
   // }
 
   ngOnDestroy() {
@@ -92,15 +112,15 @@ export class VendorDashboardComponent implements OnInit {
     }
   }
 
-  updatePdt(id : number){
+  updatePdt(id: number) {
     this.dialog.open(UpdateCompComponent, {
-      data : id,
+      data: id,
     });
   }
-  addProduct(){
+  addProduct() {
     this.dialog.open(AddProductComponent, {
-      data : this.id,
+      data: this.id,
     });
   }
-  
+
 }

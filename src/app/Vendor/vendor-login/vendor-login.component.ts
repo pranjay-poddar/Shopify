@@ -18,74 +18,94 @@ import { Vendor } from 'src/app/models/vendor';
 export class VendorLoginComponent implements OnInit {
 
 
-  
+
   VLoginForm !: FormGroup;
-  err ! : String;
-  light ! : string;
-  vendor : Vendor = new Vendor();
-  id ! : number;
-  constructor(private fb: FormBuilder, private sharingService:SharingService, private vendorService : VendorService, private router : Router) { }
+  err !: String;
+  light !: string;
+  vendor: Vendor = new Vendor();
+  id !: number;
+  constructor(private fb: FormBuilder, private sharingService: SharingService, private vendorService: VendorService, private router: Router) { }
 
   ngOnInit(): void {
-    function ConfirmedValidator(controlName: string, matchingControlName: string){
+    function ConfirmedValidator(controlName: string, matchingControlName: string) {
       return (formGroup: FormGroup) => {
-          const control = formGroup.controls[controlName];
-          const matchingControl = formGroup.controls[matchingControlName];
-          if (matchingControl.errors && !matchingControl.errors.confirmedValidator) {
-              return;
-          }
-          if (control.value !== matchingControl.value) {
-              matchingControl.setErrors({ confirmedValidator: true });
-          } else {
-              matchingControl.setErrors(null);
-          }
+        const control = formGroup.controls[controlName];
+        const matchingControl = formGroup.controls[matchingControlName];
+        if (matchingControl.errors && !matchingControl.errors.confirmedValidator) {
+          return;
+        }
+        if (control.value !== matchingControl.value) {
+          matchingControl.setErrors({ confirmedValidator: true });
+        } else {
+          matchingControl.setErrors(null);
+        }
       }
-  }
+    }
     this.VLoginForm = this.fb.group({
-   
-      emailId: ['',[
+
+      emailId: ['', [
         Validators.required,
         Validators.email,
         Validators.maxLength(40)
       ]],
-   
-   
-      pass:['',[
+
+
+      pass: ['', [
         Validators.required,
         Validators.pattern('^(?:(?:(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]))|(?:(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[a-z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))).{8,32}$'),
         Validators.minLength(8)
       ]],
-    
-     
+
+
     },
     );
-    
+
     this.light = this.sharingService.getData();
-    
+
   }
 
-  get email(){
+  get email() {
     return this.VLoginForm.get('emailId');
   }
 
-  get pass(){
+  get pass() {
     return this.VLoginForm.get('pass');
   }
-  submit(){
-    this.vendorService.signInVendor(this.VLoginForm.value).subscribe((data) => {
+  submit() {
+    /*this.vendorService.signInVendor(this.VLoginForm.value).subscribe((data) => {
       this.vendor = data;
       this.id = this.vendor.id;
-      Swal.fire({  
-        icon: 'success',  
-        title: 'Login Successfull',  
-        text: '',  
+      Swal.fire({
+        icon: 'success',
+        title: 'Login Successfull',
+        text: '',
       });
       setTimeout(() => {
-        this.router.navigate(['vendor-dashboard', this.id]);
+        //this.router.navigate(['vendor-dashboard', this.id]);
       }, 1000);
     },
-    (Error) => {alert(Error.error.message);}
-    );
+      (Error) => { alert(Error.error.message); }
+    );*/
+    this.vendor = {
+      "id": 4,
+      "shopName": "sohail grocery",
+      "emailId": "sohail@gmail.com",
+      "num": 8977712323,
+      "state": "Delhi",
+      "city": "Delhi",
+      "area": "Punjabi bhag",
+      "pin": 226021,
+      "pass": "sohail@123",
+      "conPass": "sohail@123",
+      "products": [
+        {
+          "pdtName": "parle g biscuit",
+          "qty": 90,
+          "price": 10
+        }
+      ]
+    }
+    this.router.navigate(['vendor-dashboard', this.id]);
     this.VLoginForm.reset();
   }
 
