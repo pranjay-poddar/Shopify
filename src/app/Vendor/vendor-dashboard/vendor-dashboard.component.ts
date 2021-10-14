@@ -7,6 +7,8 @@ import {MatTableDataSource} from '@angular/material/table';
 import { expand, flyInOut } from 'src/app/Utilities/animations/animation';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateCompComponent } from '../update-comp/update-comp.component';
+import { Products } from 'src/app/models/products';
+import { AddProductComponent } from '../add-product/add-product.component';
 
 
 @Component({
@@ -93,6 +95,11 @@ export class VendorDashboardComponent implements OnInit {
   updatePdt(id : number){
     this.dialog.open(UpdateCompComponent, {
       data : id,
+    });
+  }
+  addProduct(){
+    this.dialog.open(AddProductComponent, {
+      data : this.id,
     });
   }
   

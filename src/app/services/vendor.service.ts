@@ -24,8 +24,8 @@ export class VendorService {
     return this.httpClient.get<Vendor>(this.baseUrl+"vendor/"+id);
   }
   //add items
-  addProducts(vendor : Vendor) : Observable<Vendor>{
-    return this.httpClient.put<Vendor>(this.baseUrl+"add-product", vendor);
+  addProducts(id : number, vendor : Vendor) : Observable<Vendor>{
+    return this.httpClient.put<Vendor>(this.baseUrl+"add-product/"+id, vendor);
   }
   //get Items
   getItems(id : number) : Observable<Vendor[]>{

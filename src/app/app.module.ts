@@ -32,6 +32,7 @@ import { BuyerSignupComponent } from './Buyer/buyer-signup/buyer-signup.componen
 import { BuyerForgotPassComponent } from './Buyer/buyer-forgot-pass/buyer-forgot-pass.component'
 import { MatTableModule } from '@angular/material/table';
 import { UpdateCompComponent } from './Vendor/update-comp/update-comp.component';
+import { AddProductComponent } from './Vendor/add-product/add-product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +48,7 @@ import { UpdateCompComponent } from './Vendor/update-comp/update-comp.component'
     BuyerSignupComponent,
     BuyerForgotPassComponent,
     UpdateCompComponent,
+    AddProductComponent,
   
   ],
   imports: [
