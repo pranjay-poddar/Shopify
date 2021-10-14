@@ -6,19 +6,16 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
-
-
 /* Structure */
-
 table {
     width: 100%;
-}
-
-.mat-form-field {
+  }
+  
+  .mat-form-field {
     font-size: 14px;
     width: 100%;
-}
-
+  }
+  
 .wrapper {
     margin: 0px;
 }
@@ -116,7 +113,7 @@ table {
 }
 
 .wrapper .top_navbar .top_menu ul li a:hover {
-    background: #15331c;
+    background: #4360b5;
     color: #fff;
 }
 
@@ -165,12 +162,8 @@ table {
 
 .wrapper .sidebar ul li a:hover,
 .wrapper .sidebar ul li a.active {
-    background: #15331c;
+    background: #4360b5;
     color: #fff;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
 }
 
 .wrapper .sidebar ul li a:hover:before,
@@ -369,13 +362,6 @@ sup {
     border: white;
 }
 
-.infobtn:hover {
-    padding: 5px;
-    background-color: #15331c !important;
-    color: white !important;
-    border: white;
-}
-
 .detailsbtn {
     padding: 4px;
     background-color: #308d46 !important;
@@ -385,12 +371,8 @@ sup {
 
 .infobtn:hover,
 .detailsbtn:hover {
-    background-color: #15331c !important;
+    background-color: rgb(8, 37, 75) !important;
     color: white !important;
-}
-
-.add-pdct {
-    margin: 5vh;
 }
 
 thead {

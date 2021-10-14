@@ -4,6 +4,12 @@ import { Vendor } from 'src/app/models/vendor';
 import { VendorService } from 'src/app/services/vendor.service';
 import { flyInOut , expand} from '../../Utilities/animations/animation';
 import Swal from 'sweetalert2';
+import { BuyerService } from 'src/app/services/buyer.service';
+import { Buyer } from 'src/app/models/buyer';
+import { VendorList } from 'src/app/models/vendor-list';
+import { PdtList } from 'src/app/models/pdt-list';
+import { MatDialog } from '@angular/material/dialog';
+import { PdtDetailsCompComponent } from '../pdt-details-comp/pdt-details-comp.component';
 
 @Component({
   selector: 'app-buyer-dashboard',
@@ -17,13 +23,15 @@ import Swal from 'sweetalert2';
 export class BuyerDashboardComponent implements OnInit {
 
   id ! : number;
-  
-  vendor : Vendor = new Vendor();
+  buyer : Buyer = new Buyer()
+  vendorList!: VendorList[];
+  pdtList ! : PdtList[];
+  pdt ! : string;
   date=Date();
   sidenav = "";
   sidenavTitle = "";
   main_container = "main_container" ;
-  city! : String;
+  pin! : number;
   time = new Date();
   intervalId:any;
   subscription: any;
@@ -54,7 +62,7 @@ export class BuyerDashboardComponent implements OnInit {
     }
   };
 
-  constructor(private route : ActivatedRoute, private vendorService : VendorService) { }
+  constructor(private route : ActivatedRoute, private buyerService : BuyerService, private dialog : MatDialog) { }
 
   ngOnInit(): void {
     // Using Basic Interval for clock
@@ -63,11 +71,11 @@ export class BuyerDashboardComponent implements OnInit {
       }, 1000);
 
     this.id = this.route.snapshot.params['id'];
-    this.vendorService.getById(this.id).subscribe((data) => {
-      this.vendor = data;
+    this.buyerService.getBuyerById(this.id).subscribe((data) => {
+      this.buyer = data;
     },
-    (Error) => {alert(Error.error.message);}
-    )
+    (Error) => {alert("Please Login again")}
+    );
   }
 
   ngOnDestroy() {
@@ -85,11 +93,29 @@ export class BuyerDashboardComponent implements OnInit {
       this.hideproducts = "hideproducts";
     }
   //  work below this
+  this.buyerService.getVendorById(this.pin).subscribe((data) => {
+      this.pdtList = data;
+  },
+  (Error) => {alert("No shop in the given pin")}
+  )
   
   }
 
   products(){
-    Swal.fire('Products'); 
+    this.buyerService.getVendorByProduct(this.pdt, this.pin).subscribe((data) => {
+        this.pdtList = data;
+        console.log(this.pdtList);
+
+    },
+    (Error) => {alert("no shops found for given product in given area")}
+    );
+    // Swal.fire('Products'); 
+  }
+
+  getDetailsOfPdt(id : number){
+    this.dialog.open(PdtDetailsCompComponent, {
+      data : this.id,
+    });
   }
   
 }

@@ -40,42 +40,35 @@
                 </li>
                 <li>
                     <a>
-                        <span class="icon"><i class="fas fa-tags"></i> </span>
-                        <span class="{{ sidenavTitle }} t grow">Price</span>
+                        <span class="icon"><i class="fas"></i> </span>
+                        <span class="{{ sidenavTitle }} t grow">pdt</span>
                     </a>
                 </li>
                 <li>
-                    <li>
-                        <a>
-                            <span class="icon"><i class="fas fa-star"></i> </span>
-                            <span class="{{ sidenavTitle }} t grow">Favorites</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <span class="icon"><i class="fas fa-shopping-bag"></i>
+                    <a>
+                        <span class="icon"><i class="fas"></i>
                     </span>
-                            <span class="{{ sidenavTitle }} t grow">Shops</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <span class="icon"><i class="fas fa-address-book grow"></i></span>
-                            <span class="{{ sidenavTitle }} t grow">Contact Customers</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <span class="icon"><i class="fas fa-question-circle grow"></i></span>
-                            <span class="{{ sidenavTitle }} t grow">Help Support</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a routerLink="/home">
-                            <span class="icon"><i class="fas fa-comment grow"></i></span>
-                            <span class="{{ sidenavTitle }} t grow">Reviews</span>
-                        </a>
-                    </li>
+                        <span class="{{ sidenavTitle }} t grow">pdt</span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <span class="icon"><i class="fas fa-cart grow"></i></span>
+                        <span class="{{ sidenavTitle }} t grow">pdt</span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <span class="icon"><i class="fas fa-bed grow"></i></span>
+                        <span class="{{ sidenavTitle }} t grow">pdts</span>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/home">
+                        <span class="icon"><i class="fas fa-comment grow"></i></span>
+                        <span class="{{ sidenavTitle }} t grow">Reviews</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <div class="{{ main_container }}">
@@ -112,13 +105,13 @@
                         <div class="row">
                             <div class="col-6 d-flex justify-content-center">
                                 <div class="card stats c-1 grow">
-                                    <h1 class="card-head text-center" [@expand]>Products</h1>
+                                    <h1 class="card-head text-center" [@expand] (click)="getProducts()">Products</h1>
                                     <h1 class="card-head2 text-center" [@expand]></h1>
                                 </div>
                             </div>
                             <div class="col-6 d-flex justify-content-center">
                                 <div class="card stats c-2 grow">
-                                    <h1 class="card-head text-center" [@expand]>Areas</h1>
+                                    <h1 class="card-head text-center" [@expand]>Details</h1>
                                     <h1 class="card-head2 text-center" [@expand]></h1>
                                 </div>
                             </div>
@@ -127,14 +120,14 @@
                             <div class="col-6 d-flex justify-content-center">
                                 <div class="card stats c-3 grow">
                                     <h1 class="card-head text-center" [@expand]>
-                                        Vendors
+                                        Details
                                     </h1>
                                     <h1 class="card-head2 text-center" [@expand]></h1>
                                 </div>
                             </div>
                             <div class="col-6 d-flex justify-content-center">
                                 <div class="card stats c-4 grow">
-                                    <h1 class="card-head text-center" [@expand]>Buyers</h1>
+                                    <h1 class="card-head text-center" [@expand]>Details</h1>
                                     <h1 class="card-head2 text-center" [@expand]></h1>
                                 </div>
                             </div>
@@ -165,8 +158,8 @@
                   <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
                 </tr>
               </table> -->
-            <button type="button" class="btn btn-primary infobtn add-pdct grow" (click)="addProduct()">Add Product</button>
-            <table class="table table-striped text-center">
+              <button type="button" class="btn btn-primary infobtn grow" (click)="addProduct()">Add Product</button>
+              <table class="table table-striped">
                 <tr>
                     <th>No.</th>
                     <th>Product Name</th>
@@ -175,21 +168,19 @@
                 <tr *ngFor="let e of ELEMENT_DATA">
                     <td>{{ELEMENT_DATA.indexOf(e)+1}}</td>
                     <td>{{e.pdtName}}</td>
-
                     <td>
-                        <button mat-raised-button type="submit" style="margin-left: 2%;" class="detailsbtn grow" (click)="updatePdt(e.pdtId)">Update</button>
-                        <button mat-raised-button type="submit" style="margin-left: 2%;" class="detailsbtn grow">Delete</button>
+                        <button mat-raised-button type="submit" style="margin-left: 2%;"color="primary" (click)="updatePdt(e.pdtId)">Update</button>
+                        <button mat-raised-button type="submit" style="margin-left: 2%;"color="primary">Delete</button>
                     </td>
                 </tr>
-
-            </table>
-
-
-
-
-
+              </table>
+              
+              
+              
+            
 
 
+            
         </div>
     </div>
 

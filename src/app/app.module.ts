@@ -33,7 +33,8 @@ import { BuyerForgotPassComponent } from './Buyer/buyer-forgot-pass/buyer-forgot
 import { MatTableModule } from '@angular/material/table';
 import { UpdateCompComponent } from './Vendor/update-comp/update-comp.component';
 import { AddProductComponent } from './Vendor/add-product/add-product.component';
-import { BuyerDashboardComponent } from './Buyer/buyer-dashboard/buyer-dashboard.component'
+import { BuyerDashboardComponent } from './Buyer/buyer-dashboard/buyer-dashboard.component';
+import { PdtDetailsCompComponent } from './Buyer/pdt-details-comp/pdt-details-comp.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +52,7 @@ import { BuyerDashboardComponent } from './Buyer/buyer-dashboard/buyer-dashboard
     UpdateCompComponent,
     AddProductComponent,
     BuyerDashboardComponent,
+    PdtDetailsCompComponent,
   
   ],
   imports: [

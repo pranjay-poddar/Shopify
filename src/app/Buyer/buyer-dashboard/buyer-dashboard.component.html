@@ -52,20 +52,20 @@
                 </li>
                 <li>
                     <a>
-                        <span class="icon"><i class="fas fa-shopping-bag grow"></i> </span>
+                        <span class="icon"><i class="fas fa-shopping-bag"></i> </span>
                         <span class="{{ sidenavTitle }} t grow">Products</span>
                     </a>
                 </li>
                 <li>
                     <a>
-                        <span class="icon"><i class="fas fa-address-book grow"></i>
+                        <span class="icon"><i class="fas fa-address-book"></i>
                     </span>
                         <span class="{{ sidenavTitle }} t grow">Contact Vendor</span>
                     </a>
                 </li>
                 <li>
                     <a>
-                        <span class="icon"><i class="fas fa-question-circle grow"></i></span>
+                        <span class="icon"><i class="fas fa-question-circle"></i></span>
                         <span class="{{ sidenavTitle }} t grow">Help Support</span>
                     </a>
                 </li>
@@ -82,7 +82,7 @@
                 <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 ">
                     <div class="row">
                         <div class="col-6 ">
-                            <h1 class="head1">Welcome {{ vendor.shopName }}</h1>
+                            <h1 class="head1">Welcome {{ buyer.name }}</h1>
                         </div>
                         <div class="col-6 ">
                             <span class="dateTime-mobile ">{{date| date : 'dd-MM-yyyy'}}</span>
@@ -154,13 +154,13 @@
 
             <div class="check-vendor text-center ">
                 <label class="check-city ">Find local vendors in your City: </label>
-                <input type="number" [(ngModel)]="city " placeholder="Enter PIN code " name="city " (keyup.enter)="findvendors() ">
+                <input type="number" [(ngModel)]="pin" placeholder="Enter PIN code " name="pin" (keyup.enter)="findvendors() ">
                 <button type="button " class="btn btn-primary infobtn grow " (click)="findvendors() ">Search</button>
             </div>
 
             <div class="check-vendor text-center {{hideproducts}}">
                 <label class="check-city ">Find Products: </label>
-                <input type="text" placeholder="Enter Product Name " name="products" (keyup.enter)="products()">
+                <input type="text" [(ngModel)]="pdt" placeholder="Enter Product Name " name="pdt" (keyup.enter)="products()">
                 <button type="button " class="btn btn-primary infobtn grow " (click)="products() ">Search</button>
             </div>
 
@@ -173,12 +173,12 @@
                             <td>Details</td>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody *ngIf="pdtList != null && pdtList != undefined">
                         <!-- <tr *ngFor="let a of vendorDetails "> -->
-                        <tr>
-                            <td>Shreya Kiranas</td>
-                            <td>Krishna Nagar, 482002</td>
-                            <td><button type="button " class="btn btn-primary detailsbtn grow ">Details</button></td>
+                        <tr *ngFor="let e of pdtList">
+                            <td>{{ e.shopName }}</td>
+                            <td>{{ e.area }}</td>
+                            <td><button type="button " class="btn btn-primary detailsbtn grow " (click)="getDetailsOfPdt(e.id)">Details</button></td>
                         </tr>
                     </tbody>
                 </table>

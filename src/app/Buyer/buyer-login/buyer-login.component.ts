@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { flyInOut, expand } from '../../Utilities/animations/animation';
 import { SharingService } from 'src/app/services/sharing.service';
+import { BuyerService } from 'src/app/services/buyer.service';
 @Component({
   selector: 'app-buyer-login',
   templateUrl: './buyer-login.component.html',
@@ -17,7 +18,7 @@ export class BuyerLoginComponent implements OnInit {
   BLoginForm !: FormGroup;
   id ! : number;
   light ! : string;
-  constructor(private fb: FormBuilder,private router : Router, private sharingService:SharingService) { }
+  constructor(private fb: FormBuilder,private sharingService:SharingService, private buyerService : BuyerService, private router : Router) { }
 
   ngOnInit(): void {
   
@@ -44,18 +45,29 @@ export class BuyerLoginComponent implements OnInit {
 
 
 
-  get email(){
+  get emailId(){
     return this.BLoginForm.get('emailId');
   }
 
-  get password(){
+  get pass(){
     return this.BLoginForm.get('pass');
   }
 
 
 
-  submit(){
- 
+submit(){
+  this.buyerService.loginBuyer(this.BLoginForm.value).subscribe((data) => {
+    Swal.fire({  
+      icon: 'success',  
+      title: 'Login Successfull',  
+      text: '',  
+    });
+    setTimeout(() => {
+      this.router.navigate(['buyer-dashboard', data.id]);
+    }, 1000);
+  },
+  (Error) => {alert(Error.error.message)}
+  )
 }
 
 }

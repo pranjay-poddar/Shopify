@@ -1,13 +1,13 @@
 <section class="add-product">
     <div class="container">
-        <label class="head1">Product Name :</label>
-        <input type="text" class="input1" [(ngModel)]="product.pdtName" name="shopName">
+        Product Name :
+        <input type="text" [(ngModel)]="product.pdtName"name="shopName">
         <br>
-        <label class="head2">Quantity :</label>
-        <input type="text" class="input2" [(ngModel)]="product.qty" name="qty">
+        Quantity :
+        <input type="text" [(ngModel)]="product.qty" name="qty">
         <br>
-        <label class="head3">Price :</label>
-        <input type="text" class="input3" [(ngModel)]="product.price" name="price">
+        Price :
+        <input type="text" [(ngModel)]="product.price" name="price">
         <br>
         <button type="button" class="btn btn-primary infobtn grow" (click)="addProduct()">Add</button>
     </div>
