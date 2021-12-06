@@ -9,7 +9,7 @@ import { Vendor } from '../models/vendor';
 })
 export class VendorService {
 
-  private baseUrl = "http://localhost:8080/api/v1/";
+  private baseUrl = "https://shopify-backend-server.herokuapp.com/api/v1/";
   constructor(private httpClient : HttpClient) { }
   //register vendor
   registerVendor(VsForm : any) : Observable<Vendor>{
