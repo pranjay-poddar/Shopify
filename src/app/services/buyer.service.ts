@@ -11,7 +11,7 @@ import { VendorList } from '../models/vendor-list';
 })
 export class BuyerService {
 
-  private baseUrl = "http://localhost:8080/api/v2/";
+  private baseUrl = "https://shopify-backend-server.herokuapp.com/api/v2/";
   constructor(private httpClient : HttpClient) { }
   //register buyer
   registerBuyer(BSForm : any) : Observable<any>{
