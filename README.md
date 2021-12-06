@@ -60,6 +60,18 @@ Shopify tries to improve the market base of vendors in their respective areas by
 -   Creating chat forums using web socket. These chat forums can be utilized by the buyers to interact with each other and vendors which will offer all kinds of           product reviews and assistance to them.
 -   A product catalogue from where a buyer can keep track of all his past purchases.
 
+## Sample Login ID and Password
+
+Log On to - [https://shopify1.netlify.app/home](https://shopify1.netlify.app/home)
+
+Vendor login credentials: 
+- Id: foodstop@gmail.com
+- Password: Foodstop@1
+
+Buyer login credentials:
+- Id: pranjay@gmail.com
+- Password: Pranjay@1
+
 ## Installation
 -   npm install
 ## Development server
