@@ -1,6 +1,6 @@
 <h1 align="center"><b> SHOPIFY </b></h1> 
 <p> A compassionate effort to provide people with all the necessities they need at their finger tips, we are resolutely committed to provide our buyers with vendors and their services at their doorsteps.</p>
-Link - <a href="https://shopify1.netlify.app/home"> https://shopify1.netlify.app</a>
+Link - <a href="https://shopify1.netlify.app/home">shopify1.netlify.app</a>
 <br>
 <br>
 <p align="center">
